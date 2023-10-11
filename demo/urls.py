@@ -1,7 +1,7 @@
 # demo.urls
 
 from django.urls import path
-from demo.views import (index,
+from demo.views import (homepage_view,
                         about_view,
                         create_article_view,
                         main_article_view,
@@ -14,7 +14,7 @@ from demo.views import (index,
 
 
 urlpatterns = [
-    path("", index, name="homepage"),
+    path("", homepage_view, name="homepage"),
     path("about/", about_view, name="about"),
     path("create/", create_article_view, name="create_article"),
     path("<int:article>/", main_article_view, name="article"),
