@@ -4,11 +4,11 @@ from django.shortcuts import render
 
 
 def homepage_view(request):
-    return render(request, "index.html")
+    return render(request, "index.html", {"page_name": "Home"})
 
 
 def about_view(request):
-    return render(request, "about.html")
+    return render(request, "about.html", {"page_name": "About"})
 
 
 def main_article_view(request, article: int):
@@ -20,7 +20,7 @@ def comments_article_view(request, article: int):
 
 
 def create_article_view(request):
-    return render(request, "newarticle.html")
+    return render(request, "newarticle.html", {"page_name": "New Article"})
 
 
 def update_article_view(request,  article: int):
@@ -41,6 +41,8 @@ def topic_subscribe_view(request, topic: str):
 
 def topic_unsubscribe_view(request, topic: str):
     return HttpResponse(f'This page is to confirm unsubscription from the topic {topic}')
+
+
 
 
 

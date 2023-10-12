@@ -25,7 +25,7 @@ def register_user_view(request):
 
 
 def login_user_view(request):
-    return render(request, "login.html")
+    return render(request, "login.html", {"page_name": "Login page"})
 
 
 def logout_user_view(request: HttpRequest) -> redirect:
@@ -34,4 +34,4 @@ def logout_user_view(request: HttpRequest) -> redirect:
 
 
 def user_registration_view(request):
-    return render(request, "registration.html")
+    return render(request, "registration.html", {"page_name": "Registration"})
