@@ -1,0 +1,40 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script defer src="{% static 'bootstrap/fontawesome/js/all.min.js' %}"></script>
+</head>
+<body>
+<div class="container">
+  <header class="lh-1 py-3">
+    <div class="row d-flex justify-content-between align-items-center text-center">
+       <div class="col text-capitalize">
+        <a href="index.html" class="site-title text-dark">My Test Blog</a>
+      </div>
+
+    </div>
+  </header>
+  <div class="nav-scroller py-1">
+    <nav class="nav d-flex justify-content-between">
+      <a href="{% url 'login' %}" class="nav-item nav-link link-body-emphasis">Login</a>
+      <a href="{% url 'registration' %}" class="nav-item nav-link link-body-emphasis">Registration</a>
+      <a href="{% url 'homepage' %}" class="nav-item nav-link link-body-emphasis">Main page</a>
+      <a href="{% url 'about' %}" class="nav-item nav-link link-body-emphasis">About this blog</a>
+      <a href="{% url 'create_article' %}" class="nav-item nav-link link-body-emphasis">Create new blog</a>
+
+      </nav>
+  </div>
+<div class="container">
+    {% block content %}
+    {% endblock %}
+    </div>
+</div>
+
+   <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

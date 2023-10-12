@@ -3,13 +3,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-# Create your views here.
 def homepage_view(request):
-    return HttpResponse("homepage")
+    return render(request, "index.html")
 
 
 def about_view(request):
-    return HttpResponse("about")
+    return render(request, "about.html")
 
 
 def main_article_view(request, article: int):
@@ -21,7 +20,7 @@ def comments_article_view(request, article: int):
 
 
 def create_article_view(request):
-    return HttpResponse(f'This is a page for article creation')
+    return render(request, "newarticle.html")
 
 
 def update_article_view(request,  article: int):
@@ -44,10 +43,4 @@ def topic_unsubscribe_view(request, topic: str):
     return HttpResponse(f'This page is to confirm unsubscription from the topic {topic}')
 
 
-def bla(request):
-    return render(request, template_name="bla.html")
-
-
-def bla2(request):
-    return render(request, template_name="bla2.html")
 

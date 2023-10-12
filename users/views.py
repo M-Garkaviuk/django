@@ -1,7 +1,7 @@
 # users.views
 from django.contrib.auth import logout
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 
 def user_profile_view(request, username: str):
@@ -25,9 +25,13 @@ def register_user_view(request):
 
 
 def login_user_view(request):
-    return HttpResponse("This is a login page")
+    return render(request, "login.html")
 
 
 def logout_user_view(request: HttpRequest) -> redirect:
     logout(request)
     return redirect('homepage')
+
+
+def user_registration_view(request):
+    return render(request, "registration.html")
