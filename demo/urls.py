@@ -14,7 +14,7 @@ from demo.views import (homepage_view,
 
 
 urlpatterns = [
-    path("", homepage_view, name="homepage"),
+    path('', homepage_view, name='homepage'),
     path("about/", about_view, name="about"),
     path("create/", create_article_view, name="create_article"),
     path("<int:article>/", main_article_view, name="article"),
