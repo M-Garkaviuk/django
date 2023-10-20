@@ -4,14 +4,19 @@
 <html lang="en">
 <body>
     <article class="post">
-        {% if post.published_date %}
+        {% if article.created %}
             <time class="date">
-                {{ post.published_date }}
+                {{ article.created }}
             </time>
         {% endif %}
         <h2>{{ article.title }}</h2>
         <p>{{ article.content|linebreaksbr }}</p>
     </article>
+    <comment class="post">
+        {% for comment in comments %}
+             <p>{{ comment.message }}</p>
+        {% endfor %}
+    </comment>
 </body>
 </html>
 {% endblock %}

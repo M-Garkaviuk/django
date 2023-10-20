@@ -4,14 +4,14 @@ from django.urls import path
 from demo.views import (homepage_view,
                         about_view,
                         create_article_view,
-                        article_list,
                         comments_article_view,
                         update_article_view,
                         topics_list_view,
                         topic_subscribe_view,
                         topic_unsubscribe_view,
-                        article_detail,
+
                         )
+from demo.services import article_list, article_detail
 
 
 urlpatterns = [
