@@ -12,6 +12,7 @@
         <h2>{{ article.title }}</h2>
         <p>{{ article.content|linebreaksbr }}</p>
     </article>
+    <h2>Comments</h2>
     <comment class="post">
         {% for comment in comments %}
              <p>{{ comment.message }}</p>

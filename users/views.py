@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.models import User
 from demo.models import Article, Comment
 
+
 def user_profile_view(request, username="martinezmichelle"):
     user = get_object_or_404(User, username=username)
     articles = Article.objects.filter(author=user)

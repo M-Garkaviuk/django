@@ -8,6 +8,7 @@ class Topic(models.Model):
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=255)
     subscribers = models.ManyToManyField(User, through="Notification")
+    article = models.ManyToManyField("Article", related_name="articles")
 
     def __str__(self):
         return f'ID: {self.pk}, {self.title}'
