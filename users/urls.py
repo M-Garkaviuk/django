@@ -1,11 +1,11 @@
 # users.urls
-from django.urls import path, re_path
+from django.urls import path
 from users.views import (user_profile_view,
                         set_user_password_view,
                         set_user_data_view,
                         login_user_view,
                         logout_user_view,
-                         user_registration_view,)
+                        user_registration_view,)
 
 
 urlpatterns = [

@@ -24,4 +24,5 @@ urlpatterns = [
     path("topics/", topics_list_view, name="topics"),
     path("topics/<str:topic>/subscribe/", topic_subscribe_view, name="topic_subscribe"),
     path("topics/<str:topic>/unsubscribe/", topic_unsubscribe_view, name="topic_unsubscribe"),
+
 ]
