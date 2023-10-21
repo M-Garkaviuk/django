@@ -13,7 +13,7 @@
   <header class="lh-1 py-3">
     <div class="row d-flex justify-content-between align-items-center text-center">
        <div class="col text-capitalize">
-        <a href="index.html" class="site-title text-dark">My Test Blog</a>
+        <a href={% url 'homepage'%}>My Test Blog</a>
       </div>
 
     </div>
@@ -24,7 +24,9 @@
       <a href="{% url 'registration' %}" class="nav-item nav-link link-body-emphasis">Registration</a>
       <a href="{% url 'homepage' %}" class="nav-item nav-link link-body-emphasis">Main page</a>
       <a href="{% url 'about' %}" class="nav-item nav-link link-body-emphasis">About this blog</a>
-      <a href="{% url 'create_article' %}" class="nav-item nav-link link-body-emphasis">Create new blog</a>
+      <a href="{% url 'create_article' %}" class="nav-item nav-link link-body-emphasis">Create new article</a>
+{#      <a href="{% url 'user_profile' username=user.username %}" class="nav-item nav-link link-body-emphasis">Your profile</a>#}
+
 
       </nav>
   </div>

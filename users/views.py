@@ -1,11 +1,15 @@
 # users.views
 from django.contrib.auth import logout
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.auth.models import User
+from demo.models import Article, Comment
 
 
-def user_profile_view(request, username: str):
-    return HttpResponse(f'This is profile page of {username}')
+def user_profile_view(request, username="martinezmichelle"):
+    user = get_object_or_404(User, username=username)
+    articles = Article.objects.filter(author=user)
+    return render(request, 'userprofile.html', {"user": user, "articles": articles})
 
 
 def set_user_password_view(request):
