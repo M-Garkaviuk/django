@@ -1,7 +1,8 @@
 # demo.views
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from demo.models import Article, Comment
+from .models import Article
+from django.views.generic import ListView, DetailView
 from datetime import datetime
 from django.utils import timezone
 
@@ -10,8 +11,23 @@ def about_view(request):
     return render(request, "about.html", {"page_name": "About"})
 
 
-def main_article_view(request, article: int):
-    return HttpResponse(f"article # {article}")
+class ArticlesListView(ListView):
+    model = Article
+    template_name = 'index.html'
+    login_url = 'login/'
+    queryset = Article.objects.all().order_by('-created')
+
+
+class ArticleDetailedView(DetailView):
+    model = Article
+    template_name = 'article_detail.html'
+    login_url = 'login/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        article = self.object
+        context['comments'] = article.article.all()
+        return context
 
 
 def create_article_view(request):
